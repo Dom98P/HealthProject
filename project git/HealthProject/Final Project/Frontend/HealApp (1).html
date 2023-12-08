@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Welcome to THE New Health App!</title>
+    <style>
+        * {
+            background-color: blanchedalmond;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            box-sizing: border-box;
+            }
+
+        .container {
+        text-align: center;
+        border: 3px grey;
+        padding: 1em;
+        font-size: large;
+        border-radius: 5%;
+        margin: 1em;
+        }
+
+        .header {
+        padding: 2em;
+        border-radius: 10%;
+        font-size: larger;
+        text-align: center;
+        border: 3px grey;
+    
+        
+        }
+
+        .header h1 {
+        margin: 0;
+        }
+
+        body {
+        background-color: blanchedalmond;
+        margin: 0;
+        }
+
+
+
+        button {
+            border: none;
+            outline: none;
+            background: transparent;
+            padding: 8px 12px;
+            color: blanchedalmond;
+            background: rgb(129, 19, 49);
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 40px;
+            width: 11%;
+        }
+
+        button:active,
+            #mainMenu:active {
+            background: #961c41; 
+        }
+
+        button:hover,
+            #mainMenu:hover {
+            background: #b33;
+            text-decoration: underline;
+            text-decoration-color: white;
+        }
+
+        #mainMenu {
+            border: none;
+            outline: none;
+            background: transparent;
+            padding: 8px 12px;
+            color: blanchedalmond;
+            background: rgb(129, 19, 49);
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 10%;
+            width: 100%;
+            float: center;
+            max-width: 36%;
+            align-items: center;
+        }
+
+        #sleepLog {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .sleepEntry {
+            display: flex;
+            justify-content: space-between;
+            border: 1px solid #555;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px;
+            text-align: center;
+        }
+
+        .veryBad,
+        .bad,
+        .okay,
+        .good,
+        .veryGood {
+            width: 25%;
+            padding: 5px;
+            text-align: center;
+            border-radius: 5px;
+        }
+
+        .veryBad { background-color: #FF4D4D; }
+        .bad { background-color: #FFA07A; }
+        .okay { background-color: #FFFACD; }
+        .good { background-color: #98FB98; }
+        .veryGood { background-color: #00FF7F; }
+
+        .removeButton {
+            background-color: #555;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #advicePage {
+            display: none;
+        }
+
+        #commentBoard {
+            width: 70%;
+            margin: auto;
+            text-align: left;
+            padding: 10px;
+            border: 2px solid #555;
+            border-radius: 5px;
+            background-color: #fff;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        #commentTitle {
+            font-size: larger;
+            margin-bottom: 10px;
+        }
+
+        #comments {
+            max-height: 200px;
+            overflow-y: auto;
+            margin-bottom: 10px;
+        }
+
+        #commentInput {
+            width: 50%;
+            padding: 5px;
+            margin: 10px 0;
+        }
+
+        #commentButton {
+            background-color: rgb(129, 19, 49);
+            color: blanchedalmond;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+        }
+
+        #externalLinks {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        #externalLinks a {
+            display: inline-block;
+            margin: 0 10px;
+            text-decoration: none;
+            color: rgb(129, 19, 49);
+            font-weight: bold;
+        }
+
+        @media (min-width: 663px) {
+            .container {
+             margin: 2em;
+            }
+
+            .header {
+                margin: 2em;
+            }
+
+            button, #mainMenu {
+                margin-right: 1em;
+            }
+        }
+
+        #addAgeBtn {
+            background-color: rgb(129, 19, 49);
+            color: blanchedalmond;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            position: absolute;
+            bottom: 10px;
+            right: 50%;    
+            transform: translateX(50%);
+        }
+
+        #addAgeBtn:active,
+        #addAgeBtn:hover {
+            background: #961c41;
+        }
+
+        #addHeightBtn {
+            background-color: rgb(129, 19, 49);
+            color: blanchedalmond;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            position: absolute;
+            bottom: 10px;
+            right: 50%;    
+            transform: translateX(50%);
+        }
+
+        #addHeightBtn:active,
+        #addHeightBtn:hover {
+            background: #961c41;
+        }
+
+        #addWeightBtn {
+            background-color: rgb(129, 19, 49);
+            color: blanchedalmond;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            position: absolute;
+            bottom: 10px;
+            right: 50%;    
+            transform: translateX(50%);
+        }
+
+        #addWeightBtn:active,
+        #addWeightBtn:hover {
+            background: #961c41;
+        }
+
+        
+        #addDiaryBtn {
+            background-color: rgb(129, 19, 49);
+            color: blanchedalmond;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            position: absolute;
+            bottom: 10px;
+            right: 50%;    
+            transform: translateX(50%);
+        }
+
+        #addDiaryBtn:active,
+        #addDiaryBtn:hover {
+            background: #961c41;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Welcome to THE New Health App!</h1>
+    </div>
+
+    <div class="container">
+        <button id="logIn-btn" onclick="showLoginForm()" ontouchstart="login()">Login</button>
+
+        <form id="logIn-form" style="display: none;">
+            <br/><br/>
+            <label for="login-username">User:</label>
+            <input type="username" id="login-username" name="username" /><br/><br/>
+
+            <label for="login-password">Password:</label>
+            <input type="password" id="login-password" name="password" /><br/><br/>
+
+            <button type="button" onclick="login()" ontouchstart="login()">Submit</button>
+        </form>
+    </div>
+
+    <div class="container">
+        <button id="signUp-btn" onclick="showSignUpForm()" ontouchstart="showSignUpForm()">Sign Up</button><br /><br />
+
+        <form id="signUp-form" style="display: none;">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" /><br /><br />
+
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" /><br /><br />
+
+            <label for="surname">Surname:</label>
+            <input type="text" id="surname" name="surname" /><br /><br />
+
+            <label for="signup-username">User:</label>
+            <input type="text" id="signup-username" name="username" /><br /><br />
+
+            <label for="signup-password">Password:</label>
+            <input type="password" id="signup-password" name="password" /><br /><br />
+
+            <button type="button" onclick="register()" ontouchstart="register()">Submit</button>
+        </form>
+    </div>
+
+    <div class="container" id="menuMain" style="display: none;">
+        <h1>Welcome!</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+
+        <button onclick="showFoodTracking()">Food Tracking</button><br /><br />
+
+        <button onclick="showSleepTracking()">Sleep Tracking</button><br /><br />
+
+        <button onclick="showWorkoutTracking()">Workouts</button><br /><br />
+
+        <button onclick="showAdvicePage()">Advice</button><br /><br />
+
+        <button onclick="showHealthProfile()">Health Profile</button><br /><br />
+    </div>
+
+    <div class="container" id="foodTrackPage" style="display: none;">
+        <h1>Welcome to the Food Tracker!</h1>
+        <button id="mainMenu" onclick="showMainMenu()">Main Menu</button><br /><br />
+        <p>
+            <button id="yesterday">Yesterday</button>
+            <button id="today">Today</button>
+            <button id="Tomorrow">Tomorrow</button>
+        </p>
+        <div class="container">
+            <div class="foodApp">
+                <h2>Food Options:</h2>
+                <div id="data-container"></div>
+                
+                <button id="addDiaryBtn" onclick="saveDiary()">Save Diary</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="sleepTrackPage" style="display: none;">
+        <h1>Welcome to the Sleep Tracker!</h1>
+
+        <button id="mainMenu" onclick="showMainMenu()">Main Menu</button><br /><br />
+        <div class="container">
+            <div id="sleepLog"></div>
+            <div class="row">
+                <label for="date">Date:</label>
+                <input type="text" id="date" name="date" value="" readonly />
+                <label for="hours">Hours:</label>
+                <input type="number" id="hours" name="hours" min="0" max="24" placeholder="0" />
+                <label for="minutes">Minutes:</label>
+                <input type="number" id="minutes" name="minutes" min="0" max="59" placeholder="0" />
+                <label for="quality">Quality:</label>
+                <select id="quality" name="quality">
+                    <option value="veryBad">Very Bad</option>
+                    <option value="bad">Bad</option>
+                    <option value="okay">Okay</option>
+                    <option value="good">Good</option>
+                    <option value="veryGood">Very Good</option>
+                </select>
+                <button onclick="addSleepEntry()">Log Sleep</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="workoutTrackingPage" style="display: none;">
+        <h1>Welcome to Workout Tracking!</h1>
+    
+        <button id="mainMenu" onclick="showMainMenu()">Main Menu</button><br /><br />
+    
+        <div class="container">
+            <div id="workoutLog"></div>
+            <div class="row">
+                <label for="workoutDate">Date:</label>
+                <input type="text" id="workoutDate" name="workoutDate" value="" readonly />
+                <label for="weight">Weight (lbs):</label>
+                <input type="number" id="weight" name="weight" min="0" placeholder="0" />
+                <label for="reps">Reps:</label>
+                <input type="number" id="reps" name="reps" min="0" placeholder="0" />
+                <label for="sets">Sets:</label>
+                <input type="number" id="sets" name="sets" min="0" placeholder="0" />
+                <button onclick="addWorkoutEntry()">Log Workout</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="advicePage" style="display: none;">
+        <h1>Health Advice</h1>
+
+        <button id="mainMenu" onclick="showMainMenu()">Main Menu</button>
+        <br/><br/>
+
+        <div id="commentBoard">
+            <h2 id="commentTitle">Comment Board</h2>
+            <div id="comments"></div>
+            <textarea id="commentInput" placeholder="Add a comment..."></textarea>
+            <button id="commentButton" onclick="addComment()">Add Comment</button>
+        </div>
+
+        <div id="externalLinks">
+            <a href="#" target="_blank">Health Website 1</a>
+            <a href="#" target="_blank">Health Website 2</a>
+            <a href="#" target="_blank">Article 1</a>
+            <a href="#" target="_blank">Article 2</a>
+        </div>
+    </div>
+
+    </div>
+
+        
+        
+        <div class="container" id="healthProfile" style="display: none;">
+            <h1>Health Profile</h1>
+
+            <button id="mainMenu" onclick="showMainMenu()">Main Menu</button>
+        <br/><br/>
+
+        <div id="userInfo">
+            <h2>User Information</h2>
+            <p><strong>Name:</strong> <span id="userName"></span></p>
+            <p><strong>Surname:</strong> <span id="userSurname"></span></p>
+            <p><strong>Height (cm):</strong> <span id="userHeight"></span></p>
+            <p><strong>Weight (lbs):</strong> <span id="userWeight" onclick="showWeightInput()">Click to add</span></p>
+            <p><strong>Age:</strong> <span id="userAge"></span></p>
+        </div>
+    
+        <div id="updateHeight">
+            <label for="newHeight">Add Height(cm):</label>
+            <input type="number" id="newHeight" min="50" max="230" placeholder="Enter new height" />
+            <button id="addHeightBtn" onclick="updateHeight()">Add</button>
+        </div>
+
+        <div id="updateWeight">
+            <label for="newWeight">Add Weight (lbs):</label>
+            <input type="number" id="newWeight" min="1" max="500" placeholder="Enter new weight" />
+            <button id="addWeightBtn" onclick="updateWeight()">Add</button>
+        </div>
+
+        <div id="updateAge">
+            <label for="newAge">Add Age:</label>
+            <input type="number" id="newAge" min="1" max="150" placeholder="Enter new age" />
+            <button id="addAgeBtn" onclick="updateAge()">Add</button>
+        </div>
+           
+        
+    </body>
+
+    <script>
+        const users = [];
+
+        function showLoginForm() {
+            document.getElementById("logIn-form").style.display = 'block';
+            document.getElementById("signUp-form").style.display = 'none';
+            document.getElementById("menuMain").style.display = 'none';
+            document.getElementById("foodTrackPage").style.display = 'none';
+            document.getElementById("sleepTrackPage").style.display = 'none';
+            document.getElementById("workoutTrackingPage").style.display = 'none';
+            document.getElementById("advicePage").style.display = 'none';
+        }
+
+        function showSignUpForm() {
+            document.getElementById("signUp-form").style.display = 'block';
+            document.getElementById("logIn-form").style.display = 'none';
+            document.getElementById("menuMain").style.display = 'none';
+            document.getElementById("foodTrackPage").style.display = 'none';
+            document.getElementById("sleepTrackPage").style.display = 'none';
+            document.getElementById("workoutTrackingPage").style.display = 'none';
+            document.getElementById("advicePage").style.display = 'none';
+        }
+
+        function login() {
+            const usernameInput = document.getElementById("login-username").value;
+            const passwordInput = document.getElementById("login-password").value;
+            
+
+            const user = users.find(u => u.username === usernameInput && u.password === passwordInput);
+
+            if (user) {
+                document.getElementById("logIn-btn").style.display = 'none';
+                document.getElementById("signUp-btn").style.display = 'none';
+                document.getElementById("logIn-form").style.display = 'none';
+                document.getElementById("signUp-form").style.display = 'none';
+                document.getElementById("menuMain").style.display = 'block';
+                document.getElementById("foodTrackPage").style.display = 'none';
+                document.getElementById("sleepTrackPage").style.display = 'none';
+                document.getElementById("workoutTrackingPage").style.display = 'none';
+            document.getElementById("advicePage").style.display = 'none';
+            } else {
+                alert("Invalid username or password");
+            }
+        }
+
+        function register() {
+        const emailInput = document.getElementById("email").value;
+        const nameInput = document.getElementById("name").value;
+        const surnameInput = document.getElementById("surname").value;
+        const usernameInput = document.getElementById("signup-username").value;
+        const passwordInput = document.getElementById("signup-password").value;
+
+        if (users.some(u => u.username === usernameInput)) {
+            alert("Username already registered. Choose a different username.");
+        } else {
+            users.push({ username: usernameInput, password: passwordInput });
+            localStorage.setItem("userName", nameInput);
+            localStorage.setItem("userSurname", surnameInput);
+
+            document.getElementById("logIn-btn").style.display = 'none';
+            document.getElementById("signUp-btn").style.display = 'none';
+            document.getElementById("signUp-form").reset();
+            document.getElementById("logIn-form").style.display = 'block';
+            document.getElementById("signUp-form").style.display = 'none';
+            document.getElementById("login-username").value = usernameInput;
+            document.getElementById("login-password").value = passwordInput;
+        }
+    }
+
+
+        const sleepLog = [];
+
+        function addSleepEntry() {
+            const date = getCurrentDate();
+            const hours = document.getElementById("hours").value;
+            const minutes = document.getElementById("minutes").value;
+            const quality = document.getElementById("quality").value;
+
+            const sleepEntry = { date, hours, minutes, quality };
+            sleepLog.push(sleepEntry);
+
+            updateSleepLog();
+        }
+
+        function getCurrentDate() {
+            const now = new Date();
+            const day = String(now.getDate()).padStart(2, '0');
+            const month = String(now.getMonth() + 1).padStart(2, '0');
+            const year = now.getFullYear();
+            return `${day}/${month}/${year}`;
+        }
+
+        function removeSleepEntry(index) {
+            sleepLog.splice(index, 1);
+            updateSleepLog();
+        }
+
+        function updateSleepLog() {
+            const sleepLogContainer = document.getElementById("sleepLog");
+            sleepLogContainer.innerHTML = "";
+
+            sleepLog.forEach((entry, index) => {
+                const entryDiv = document.createElement("div");
+                entryDiv.classList.add("sleepEntry");
+                entryDiv.classList.add(entry.quality);
+                entryDiv.innerHTML = `${entry.date}: ${entry.hours}h ${entry.minutes}min - ${entry.quality}`;
+                
+                const removeButton = document.createElement("button");
+                removeButton.classList.add("removeButton");
+                removeButton.innerHTML = "X";
+                removeButton.addEventListener("click", () => removeSleepEntry(index));
+                
+                entryDiv.appendChild(removeButton);
+                sleepLogContainer.appendChild(entryDiv);
+            });
+        }
+
+        const workoutLog = [];
+
+    function addWorkoutEntry() {
+        const date = getCurrentDate();
+        const weight = document.getElementById("weight").value;
+        const reps = document.getElementById("reps").value;
+        const sets = document.getElementById("sets").value;
+
+        const workoutEntry = { date, weight, reps, sets };
+        workoutLog.push(workoutEntry);
+
+        updateWorkoutLog();
+    }
+
+    function removeWorkoutEntry(index) {
+        workoutLog.splice(index, 1);
+        updateWorkoutLog();
+    }
+
+    function updateWorkoutLog() {
+        const workoutLogContainer = document.getElementById("workoutLog");
+        workoutLogContainer.innerHTML = "";
+
+        workoutLog.forEach((entry, index) => {
+            const entryDiv = document.createElement("div");
+            entryDiv.classList.add("sleepEntry"); // Using the same styling as sleep entries for simplicity
+            entryDiv.innerHTML = `${entry.date}: ${entry.weight}lbs x ${entry.reps} reps x ${entry.sets} sets`;
+
+            const removeButton = document.createElement("button");
+            removeButton.classList.add("removeButton");
+            removeButton.innerHTML = "X";
+            removeButton.addEventListener("click", () => removeWorkoutEntry(index));
+
+            entryDiv.appendChild(removeButton);
+            workoutLogContainer.appendChild(entryDiv);
+        });
+    }
+
+    function addComment() {
+            const commentInput = document.getElementById("commentInput").value;
+
+            if (commentInput.trim() !== "") {
+                const commentBoard = document.getElementById("comments");
+                const commentDiv = document.createElement("div");
+                commentDiv.textContent = commentInput;
+                commentBoard.appendChild(commentDiv);
+                document.getElementById("commentInput").value = "";
+            }
+        }
+
+        function showMainMenu() {
+            document.getElementById("menuMain").style.display = 'block';
+            document.getElementById("foodTrackPage").style.display = 'none';
+            document.getElementById("sleepTrackPage").style.display = 'none';
+            document.getElementById("workoutTrackingPage").style.display = 'none';
+            document.getElementById("advicePage").style.display = 'none';
+            document.getElementById("healthProfile").style.display = 'none';
+        }
+
+        function showFoodTracking() {
+            document.getElementById("menuMain").style.display = 'none';
+            document.getElementById("foodTrackPage").style.display = 'block';
+            document.getElementById("sleepTrackPage").style.display = 'none';
+            document.getElementById("workoutTrackingPage").style.display = 'none';
+            document.getElementById("advicePage").style.display = 'none';
+            document.getElementById("healthProfile").style.display = 'none';
+        }
+
+        function showSleepTracking() {
+            document.getElementById("menuMain").style.display = 'none';
+            document.getElementById("foodTrackPage").style.display = 'none';
+            document.getElementById("sleepTrackPage").style.display = 'block';
+            document.getElementById("workoutTrackingPage").style.display = 'none';
+            document.getElementById("advicePage").style.display = 'none';
+            document.getElementById("healthProfile").style.display = 'none';
+        }
+
+        function showWorkoutTracking() {
+            document.getElementById("menuMain").style.display = 'none';
+            document.getElementById("foodTrackPage").style.display = 'none';
+            document.getElementById("sleepTrackPage").style.display = 'none';
+            document.getElementById("workoutTrackingPage").style.display = 'block';
+            document.getElementById("advicePage").style.display = 'none';
+            document.getElementById("healthProfile").style.display = 'none';
+    }
+
+        function showAdvicePage() {
+            document.getElementById("menuMain").style.display = 'none';
+            document.getElementById("foodTrackPage").style.display = 'none';
+            document.getElementById("sleepTrackPage").style.display = 'none';
+            document.getElementById("workoutTrackingPage").style.display = 'none';
+            document.getElementById("advicePage").style.display = 'block';
+            document.getElementById("healthProfile").style.display = 'none';
+        }
+
+        function showHealthProfile() {
+        document.getElementById("menuMain").style.display = 'none';
+        document.getElementById("foodTrackPage").style.display = 'none';
+        document.getElementById("sleepTrackPage").style.display = 'none';
+        document.getElementById("workoutTrackingPage").style.display = 'none';
+        document.getElementById("advicePage").style.display = 'none';
+        document.getElementById("healthProfile").style.display = 'block';
+
+        
+        const userName = localStorage.getItem("userName");
+        const userSurname = localStorage.getItem("userSurname");
+        const userAge = localStorage.getItem("userAge");
+
+        if (userName) {
+            document.getElementById("userName").textContent = userName;
+        }
+
+        if (userSurname) {
+            document.getElementById("userSurname").textContent = userSurname;
+        }
+
+        if (userAge) {
+            document.getElementById("userAge").textContent = userAge;
+        }
+
+        
+        document.getElementById("addAgeBtn").style.display = 'block';
+    }
+
+    function updateAge() {
+    const newAgeInput = document.getElementById("newAge").value;
+    if (newAgeInput) {
+        localStorage.setItem("userAge", newAgeInput);
+        document.getElementById("userAge").textContent = newAgeInput;
+        document.getElementById("newAge").value = ""; 
+
+        document.getElementById("updateAge").style.display = 'none';
+    }
+}
+
+    function updateHeight() {
+        const newHeightInput = document.getElementById("newHeight").value;
+        if (newHeightInput) {
+            localStorage.setItem("userHeight", newHeightInput);
+            document.getElementById("userHeight").textContent = newHeightInput;
+            document.getElementById("newHeight").value = ""; 
+
+            document.getElementById("updateHeight").style.display = 'none';
+    }
+}
+
+function updateWeight() {
+    const newWeightInput = document.getElementById("newWeight").value;
+    if (newWeightInput) {
+        localStorage.setItem("userWeight", newWeightInput);
+        document.getElementById("userWeight").textContent = newWeightInput + " lbs";
+        document.getElementById("newWeight").value = ""; 
+
+        document.getElementById("updateWeight").style.display = 'none';
+    }
+}
+
+function showWeightInput() {
+    document.getElementById("updateWeight").style.display = 'block';
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+        fetch('foodDatabase.json')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                displayFoodInfo(data);
+            })
+            .catch(error => console.error('Error fetching food data:', error));
+    });
+
+    function displayFoodInfo(foodData) {
+            const dataContainer = document.getElementById('data-container');
+            const diaryContainer = document.getElementById('diary');
+
+            foodData.forEach(foodItem => {
+                const foodDiv = document.createElement('div');
+                foodDiv.innerHTML = `
+                    <p>${foodItem.name} Calories: ${foodItem.calories} Fat: ${foodItem.fat} Protein: ${foodItem.protein} Carbs: ${foodItem.carbs} Quantity: ${foodItem.quantity}</p>
+                    <button onclick="addToDiary('${foodItem.name}', ${foodItem.calories})">Add to Diary</button>
+                `;
+                dataContainer.appendChild(foodDiv);
+            });
+
+            function addToDiary(name, calories) {
+                const diaryItem = document.createElement('li');
+                diaryItem.textContent = `${name} - ${calories} calories`;
+                diaryContainer.appendChild(diaryItem);
+            }
+
+            function saveDiary() {
+                alert('Diary saved!');
+            }
+        };
+
+        
+
+    </script>
+
+</html>
