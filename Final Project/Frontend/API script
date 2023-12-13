@@ -1,0 +1,44 @@
+<script type="module">
+
+    const fetchOptions = {
+      method: 'GET',
+      mode: 'cors',
+    };
+
+    function fetchData() {
+      const resp = await fetch('http://localhost:5257/api/food', fetchOptions);
+      const data = await resp.json();
+
+      for (const row of data) {
+        dataContainer.innerHTML += createListing(
+          row.name,
+          row.calories,
+          row.fat,
+          row.protein,
+          row.carbs,
+          row.quantity
+        );
+      }
+    }
+
+    function createListing(name, calories, fat, protein, carbs, quantity) {
+      const template = `
+        <div class="food-list">
+          <p>${name} Calories: ${calories} Fat: ${fat} Protein: ${protein} Carbs: ${carbs} Quantity: ${quantity}</p>
+          <button onclick="addToDiary('${name}', ${calories})">Add to Diary</button>
+        </div>`;
+
+      return template;
+    }
+
+    ***
+Add to diary function
+
+    function addToDiary(name, calories) {
+        const diaryItem = document.getElementById('diary');
+        diaryItem.textContent = `${name} - ${calories} Calories`;
+        document.getElementById('diary').appendChild(diaryItem);
+    }
+        
+
+    </script>

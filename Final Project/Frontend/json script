@@ -1,0 +1,27 @@
+
+    **html
+    <div class="container">
+            <div class="foodApp">
+                <h2>Food Options:</h2>
+                <div id="data-container"></div>
+            
+                <h2>Food Diary:</h2>
+                <ul id="diary"></ul>
+            </div>
+
+
+    **Script
+
+    document.addEventListener("DOMContentLoaded", function () {
+        fetch('foodDatabase.json')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(``);
+            }
+            return response.json();
+            })
+            .then(data => {
+                    displayFoodInfo(data);
+            })
+            .catch(error => console.error());
+    });

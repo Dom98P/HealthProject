@@ -1,0 +1,34 @@
+/opt/flipbook/public/learner/www/HealthProject/Final Project/Backend/obj/Debug/net8.0/Final Project.csproj.AssemblyReference.cache
+/opt/flipbook/public/learner/www/HealthProject/Final Project/Backend/obj/Debug/net8.0/Final Project.GeneratedMSBuildEditorConfig.editorconfig
+/opt/flipbook/public/learner/www/HealthProject/Final Project/Backend/obj/Debug/net8.0/Final Project.AssemblyInfoInputs.cache
+/opt/flipbook/public/learner/www/HealthProject/Final Project/Backend/obj/Debug/net8.0/Final Project.AssemblyInfo.cs
+/opt/flipbook/public/learner/www/HealthProject/Final Project/Backend/obj/Debug/net8.0/Final Project.csproj.CoreCompileInputs.cache
+/opt/flipbook/public/learner/www/HealthProject/Final Project/Backend/obj/Debug/net8.0/Final Project.MvcApplicationPartsAssemblyInfo.cs
+/opt/flipbook/public/learner/www/HealthProject/Final Project/Backend/obj/Debug/net8.0/Final Project.MvcApplicationPartsAssemblyInfo.cache
+/opt/flipbook/public/learner/www/HealthProject/Final Project/Backend/obj/Debug/net8.0/Final Project.sourcelink.json
+/opt/flipbook/public/learner/www/HealthProject/Final Project/Backend/bin/Debug/net8.0/appsettings.Development.json
+/opt/flipbook/public/learner/www/HealthProject/Final Project/Backend/bin/Debug/net8.0/appsettings.json
+/opt/flipbook/public/learner/www/HealthProject/Final Project/Backend/bin/Debug/net8.0/Final Project
+/opt/flipbook/public/learner/www/HealthProject/Final Project/Backend/bin/Debug/net8.0/Final Project.deps.json
+/opt/flipbook/public/learner/www/HealthProject/Final Project/Backend/bin/Debug/net8.0/Final Project.runtimeconfig.json
+/opt/flipbook/public/learner/www/HealthProject/Final Project/Backend/bin/Debug/net8.0/Final Project.dll
+/opt/flipbook/public/learner/www/HealthProject/Final Project/Backend/bin/Debug/net8.0/Final Project.pdb
+/opt/flipbook/public/learner/www/HealthProject/Final Project/Backend/bin/Debug/net8.0/Microsoft.AspNetCore.OpenApi.dll
+/opt/flipbook/public/learner/www/HealthProject/Final Project/Backend/bin/Debug/net8.0/Microsoft.OpenApi.dll
+/opt/flipbook/public/learner/www/HealthProject/Final Project/Backend/bin/Debug/net8.0/Swashbuckle.AspNetCore.Swagger.dll
+/opt/flipbook/public/learner/www/HealthProject/Final Project/Backend/bin/Debug/net8.0/Swashbuckle.AspNetCore.SwaggerGen.dll
+/opt/flipbook/public/learner/www/HealthProject/Final Project/Backend/bin/Debug/net8.0/Swashbuckle.AspNetCore.SwaggerUI.dll
+/opt/flipbook/public/learner/www/HealthProject/Final Project/Backend/obj/Debug/net8.0/staticwebassets.build.json
+/opt/flipbook/public/learner/www/HealthProject/Final Project/Backend/obj/Debug/net8.0/staticwebassets.development.json
+/opt/flipbook/public/learner/www/HealthProject/Final Project/Backend/obj/Debug/net8.0/staticwebassets/msbuild.Final Project.Microsoft.AspNetCore.StaticWebAssets.props
+/opt/flipbook/public/learner/www/HealthProject/Final Project/Backend/obj/Debug/net8.0/staticwebassets/msbuild.build.Final Project.props
+/opt/flipbook/public/learner/www/HealthProject/Final Project/Backend/obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.Final Project.props
+/opt/flipbook/public/learner/www/HealthProject/Final Project/Backend/obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.Final Project.props
+/opt/flipbook/public/learner/www/HealthProject/Final Project/Backend/obj/Debug/net8.0/staticwebassets.pack.json
+/opt/flipbook/public/learner/www/HealthProject/Final Project/Backend/obj/Debug/net8.0/scopedcss/bundle/Final Project.styles.css
+/opt/flipbook/public/learner/www/HealthProject/Final Project/Backend/obj/Debug/net8.0/Final Project.csproj.CopyComplete
+/opt/flipbook/public/learner/www/HealthProject/Final Project/Backend/obj/Debug/net8.0/Final Project.dll
+/opt/flipbook/public/learner/www/HealthProject/Final Project/Backend/obj/Debug/net8.0/refint/Final Project.dll
+/opt/flipbook/public/learner/www/HealthProject/Final Project/Backend/obj/Debug/net8.0/Final Project.pdb
+/opt/flipbook/public/learner/www/HealthProject/Final Project/Backend/obj/Debug/net8.0/Final Project.genruntimeconfig.cache
+/opt/flipbook/public/learner/www/HealthProject/Final Project/Backend/obj/Debug/net8.0/ref/Final Project.dll

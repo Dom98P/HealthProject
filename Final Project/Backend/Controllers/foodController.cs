@@ -1,14 +1,18 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 
-namespace GameStoreApi.Controllers
+namespace FoodApi.Controllers
 {
     [ApiController]
     [Route("api/food")]
     public class FoodController : ControllerBase
-    {
-        private readonly List<Food> foods = new list<Food> 
+    {   
+
+        [HttpGet]
+        public IActionResult GetFoodData()
         {
+            var foodData =  new List<FoodItem> 
+          {
             new FoodItem("White Bread", 67, 1, 2, 13, "Slice"),
                 new FoodItem("Brown Bread", 74, 0.9, 2.9, 13.5, "Slice"),
                 new FoodItem("Chicken", 165, 3.6, 31, 0, "100g"),
@@ -25,16 +29,7 @@ namespace GameStoreApi.Controllers
                 new FoodItem("Peanut Butter", 94, 8, 4, 3, "Tablespoon"),
         };
 
-
-        [HttpGet]
-        public IActionResult GetFoodItems()
-        {
-            var foodItems = new List<FoodItem>
-            {
-            
-            };
-
-            return Ok(foodItems);
+            return Ok(foodData);
         }
     }
 
