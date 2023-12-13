@@ -6,7 +6,7 @@
     };
 
     function fetchData() {
-      const resp = await fetch('http://localhost:5257/api/food', fetchOptions);
+      const resp = await fetch('http://fb16.decoded.com:5257/api/food', fetchOptions);
       const data = await resp.json();
 
       for (const row of data) {
