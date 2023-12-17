@@ -280,7 +280,7 @@
 
         <button onclick="showWorkoutTracking()">Workouts</button><br /><br />
 
-        <button onclick="showAdvicePage()">Advice</button><br /><br />
+        <button onclick="showAdvicePage()">Advice Forum</button><br /><br />
 
         <button onclick="showHealthProfile()">Health Profile</button><br /><br />
     </div>
@@ -302,7 +302,6 @@
                 <h2>Food Options:</h2>
                 <div id="data-container"></div>
             
-                <h2>Food Diary:</h2>
                 <ul id="diary"></ul>
             </div>
         </div>
@@ -361,7 +360,7 @@
 
     <div class="container" id="advicePage" style="display: none;">
 
-        <h1>Health Advice</h1>
+        <h1>Health Advice Forum</h1>
 
         <button id="mainMenu" onclick="showMainMenu()">Main Menu</button>
         <br/><br/>
@@ -399,19 +398,19 @@
 
         <div id="updateAge">
             <label for="newAge">Add Age:</label>
-            <input type="number" id="newAge" min="1" max="150" placeholder="xxx" />
+            <input type="number" id="newAge" min="1" max="150" placeholder="Age" />
             <button id="addInfoBtn" onclick="updateAge()">Add</button>
         </div>
 
         <div id="updateWeight">
             <label for="newWeight">Add Weight (lbs):</label>
-            <input type="number" id="newWeight" min="1" max="500" placeholder="xxx" />
+            <input type="number" id="newWeight" min="1" max="500" placeholder="Weight" />
             <button id="addInfoBtn" onclick="updateWeight()">Add</button>
         </div>
 
         <div id="updateHeight">
             <label for="newHeight">Add Height(cm):</label>
-            <input type="number" id="newHeight" min="50" max="230" placeholder="xxx" />
+            <input type="number" id="newHeight" min="50" max="230" placeholder="Height" />
             <button id="addInfoBtn" onclick="updateHeight()">Add</button>
         </div>
             
@@ -712,7 +711,7 @@
 
 
     document.addEventListener("DOMContentLoaded", function () {
-        fetch('http://fb16.decoded.com:5257/api/food')
+        fetch('foodDatabase.json')
             .then(response => {
                 if (!response.ok) {
                     throw new Error(``);
